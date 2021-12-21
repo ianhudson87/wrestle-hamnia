@@ -9,9 +9,11 @@ public class PlayerMove : NetworkBehaviour
     private CharacterController char_controller;
 
     public float movement_Speed = 3f;
-    public float gravity = 50f;
+    public float gravity = 49f;
     public float rotation_speed = 0.15f;
     public float rotate_degrees_per_second = 180f;
+
+    public Camera cam;
 
     // Start is called before the first frame update
     void Awake() {
@@ -21,8 +23,14 @@ public class PlayerMove : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-        Rotate();
+        // print("here");
+        if(isLocalPlayer) {
+            Move();
+            Rotate();
+        }
+        else {
+            cam.enabled = false;
+        }
     }
 
     void Move() {

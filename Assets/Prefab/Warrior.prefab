@@ -998,7 +998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9037913408446553020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9238107, y: 20, z: 5.5257797}
+  m_LocalPosition: {x: -0.9238107, y: 0.3, z: 5.5257797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9037913408446777298}
@@ -1106,9 +1106,10 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   movement_Speed: 3
-  gravity: 200
+  gravity: 49
   rotation_speed: 0.15
   rotate_degrees_per_second: 180
+  cam: {fileID: 413093220}
 --- !u!1 &9037913408446553022
 GameObject:
   m_ObjectHideFlags: 0
