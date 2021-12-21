@@ -1,14 +1,15 @@
+using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : NetworkBehaviour
 {
 
     private CharacterController char_controller;
 
     public float movement_Speed = 3f;
-    public float gravity = 9.8f;
+    public float gravity = 50f;
     public float rotation_speed = 0.15f;
     public float rotate_degrees_per_second = 180f;
 
