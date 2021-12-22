@@ -983,6 +983,8 @@ GameObject:
   - component: {fileID: -2504018187034713543}
   - component: {fileID: -5311544034050469004}
   - component: {fileID: -3098366754358161928}
+  - component: {fileID: 5334261531031470629}
+  - component: {fileID: 7459597836839759742}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Player
@@ -1018,7 +1020,7 @@ Animator:
   m_GameObject: {fileID: 9037913408446553020}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 4b7352743c803774bae8d0271e6c4b7b, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7e8aa7374c4cda74e97bdd203f7d594b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1110,6 +1112,30 @@ MonoBehaviour:
   rotation_speed: 0.15
   rotate_degrees_per_second: 180
   cam: {fileID: 413093220}
+--- !u!114 &5334261531031470629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9037913408446553020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913402a96d9c6094c82b716a27ab151c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7459597836839759742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9037913408446553020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b2043cecda21a48a248542099b7162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9037913408446553022
 GameObject:
   m_ObjectHideFlags: 0
