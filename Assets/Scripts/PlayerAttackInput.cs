@@ -15,6 +15,30 @@ public class PlayerAttackInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.J)){
+            player_animations.Defend(true);
+        }
+
+        if(Input.GetKeyUp(KeyCode.J)){
+            player_animations.UnfreezeAnimation();
+            player_animations.Defend(false);
+        }
+
+
+        if(Input.GetKeyDown(KeyCode.K)) {
+            if(Random.Range(0, 2) > 0){
+                player_animations.Attack_1();
+            }
+            else{
+                player_animations.Attack_2();
+            }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space)){
+            WheelAnimations.Spin();
+        }
+        else if(Input.GetKeyUp(KeyCode.Space)){
+            WheelAnimations.StopSpin();
+        }
     }
 }

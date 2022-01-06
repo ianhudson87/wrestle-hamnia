@@ -28,4 +28,12 @@ public class CharacterAnimations : MonoBehaviour
     public void Attack_2(){
         anim.SetTrigger(AnimationTag.ATTACK_TRIGGER_2);
     }
+
+    void FreezeAnimation(){
+        anim.speed = 0f;
+    }
+
+    public void UnfreezeAnimation(){
+        anim.speed = 1f;
+    }
 }
