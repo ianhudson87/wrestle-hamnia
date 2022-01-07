@@ -5,7 +5,7 @@ using UnityEngine;
 public class WheelAnimations : MonoBehaviour
 {
 
-    private static Animator anim;
+    private static Animator anim = null;
 
     // Start is called before the first frame update
     void Awake()

@@ -10,9 +10,13 @@ public class PlayerMove : NetworkBehaviour
     private CharacterAnimations player_animations;
 
     public float movement_Speed = 3f;
-    public float gravity = 49f;
+    public const float gravity = 500f;
     public float rotation_speed = 0.15f;
     public float rotate_degrees_per_second = 180f;
+
+    Transform wheel = null;
+    // WheelAnimations wheel_anim;
+    
 
     public Camera cam;
 
@@ -20,6 +24,7 @@ public class PlayerMove : NetworkBehaviour
     void Awake() {
         char_controller = GetComponent<CharacterController>();
         player_animations = GetComponent<CharacterAnimations>();
+        // wheel_anim = new WheelAnimations();
     }
 
     // Update is called once per frame
@@ -39,23 +44,47 @@ public class PlayerMove : NetworkBehaviour
 
     void Move() {
         // print("here" + Input.GetAxisRaw(Axis.VERTICAL_AXIS));
+        Vector3 move_direction = Vector3.zero;
 
-        if (Input.GetAxisRaw(Axis.VERTICAL_AXIS) > 0) {
-            Vector3 move_direction = transform.forward;
-            move_direction.y -= gravity * Time.deltaTime;
+        if(Input.GetKey(KeyCode.Space)){
+            if (wheel == null) {
+                // wheel = wheel.transform;
+                wheel = GameObject.Find("HamsterWheel").transform;
+            }
+            
+            // wheel is reel
+            if ((wheel.position - transform.position).sqrMagnitude < 17f) {
+                // transform.position = wheel.position;
+                move_direction = wheel.position - transform.position + new Vector3(0.5f,-0.5f,1f);
+                char_controller.Move(move_direction);
+                // movement_Speed = 1f;
+                player_animations.Walk(true);
+                WheelAnimations.Spin();
+                return;
+            }
+        }
+        else if (Input.GetAxisRaw(Axis.VERTICAL_AXIS) > 0) {
+            move_direction += transform.forward;
 
-            char_controller.Move(move_direction * movement_Speed * Time.deltaTime);
-        
+            // char_controller.Move(move_direction * movement_Speed * Time.deltaTime);
         }
         else if (Input.GetAxisRaw(Axis.VERTICAL_AXIS) < 0) {
-            Vector3 move_direction = -transform.forward;
-            move_direction.y -= gravity * Time.deltaTime;
+            move_direction += -transform.forward;
 
-            char_controller.Move(move_direction * movement_Speed * Time.deltaTime);
+            // char_controller.Move(move_direction * movement_Speed * Time.deltaTime);
         }
-        else{
-            char_controller.Move(Vector3.zero);
+
+        if(Input.GetKeyUp(KeyCode.Space) && ((wheel.position - transform.position).sqrMagnitude < 10f)){
+
+            move_direction = new Vector3(3f,1f,1f);
+            char_controller.Move(move_direction);
+            
+            WheelAnimations.StopSpin();
+            return;
         }
+        move_direction.y -= gravity * Time.deltaTime;
+        char_controller.Move(move_direction * movement_Speed * Time.deltaTime);
+
     }
 
     void Rotate(){
@@ -93,4 +122,6 @@ public class PlayerMove : NetworkBehaviour
             player_animations.Walk(false);
         }
     }
+
+
 }

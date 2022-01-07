@@ -986,6 +986,7 @@ GameObject:
   - component: {fileID: -3098366754358161928}
   - component: {fileID: 5334261531031470629}
   - component: {fileID: 7459597836839759742}
+  - component: {fileID: -2047969067683501460}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Player
@@ -1001,7 +1002,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9037913408446553020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9238107, y: 0.3, z: 5.5257797}
+  m_LocalPosition: {x: -0.9238107, y: 68.16, z: 5.5257797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9037913408446777298}
@@ -1109,7 +1110,6 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   movement_Speed: 3
-  gravity: 49
   rotation_speed: 0.15
   rotate_degrees_per_second: 180
   cam: {fileID: 413093220}
@@ -1135,6 +1135,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87b2043cecda21a48a248542099b7162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2047969067683501460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9037913408446553020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e3051d2c03f27429276d8a55a6d15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9037913408446553022

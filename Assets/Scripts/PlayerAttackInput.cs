@@ -33,12 +33,5 @@ public class PlayerAttackInput : MonoBehaviour
                 player_animations.Attack_2();
             }
         }
-
-        if(Input.GetKeyDown(KeyCode.Space)){
-            WheelAnimations.Spin();
-        }
-        else if(Input.GetKeyUp(KeyCode.Space)){
-            WheelAnimations.StopSpin();
-        }
     }
 }
