@@ -9,18 +9,19 @@ public class PlayerMove : NetworkBehaviour
 
     private CharacterController char_controller;
     private CharacterAnimations player_animations;
-    private GameObject melee_hit_detector;
 
     public float movement_Speed = 3f;
     public const float gravity = 9.81f;
-    public const float acceleration = 6f;
+    public float acceleration = 6f;
     public float rotation_speed = 0.15f;
     public float rotate_degrees_per_second = 180f;
+    public float friction = 1000000f;
 
-    Transform wheel = null;
+    GameObject wheel = null;
     // WheelAnimations wheel_anim;
 
     public Camera cam;
+    public GameObject health_bar;
 
     private Vector3 velocity;
 
@@ -31,7 +32,7 @@ public class PlayerMove : NetworkBehaviour
         char_controller = GetComponent<CharacterController>();
         player_animations = GetComponent<CharacterAnimations>();
         velocity = Vector3.zero;
-        melee_hit_detector = transform.Find("MeleeHitDetector").gameObject;
+        
         // wheel_anim = new WheelAnimations();
     }
 
@@ -48,23 +49,25 @@ public class PlayerMove : NetworkBehaviour
         else {
             cam.enabled = false;
             cam.GetComponent<AudioListener>().enabled = false;
+            health_bar.SetActive(false);
         }
     }
 
     void SetVelocity() {
         // gravity
         if(char_controller.isGrounded){
-            velocity.y = 0;
+            velocity.y = -0.01f;
         }
         else{
             velocity.y -= gravity * Time.deltaTime;
         }
 
         // jump
-        if(Input.GetKeyDown(KeyCode.Space) && char_controller.isGrounded){
-            velocity.y = movement_Speed;
+        if(Input.GetKeyDown(KeyCode.Space)){
+            // print("jump");
+            if (char_controller.isGrounded)
+                velocity.y = movement_Speed;
         }
-
 
         float delta_velocity = acceleration * Time.deltaTime;
 
@@ -76,7 +79,7 @@ public class PlayerMove : NetworkBehaviour
             velocity.z = Math.Max(-movement_Speed, velocity.z - delta_velocity);
         }
         else{
-            velocity.z *= Mathf.Pow(0.1f, Time.deltaTime);
+            velocity.z *= Mathf.Pow(1/friction, Time.deltaTime);
             if(Math.Abs(velocity.z) < 0.1f){
                 velocity.z = 0;
             }
@@ -90,7 +93,7 @@ public class PlayerMove : NetworkBehaviour
             velocity.x = Math.Max(-movement_Speed, velocity.x - delta_velocity);
         }
         else{
-            velocity.x *= Mathf.Pow(0.1f, Time.deltaTime);
+            velocity.x *= Mathf.Pow(1/friction, Time.deltaTime);
             if(Math.Abs(velocity.x) < 0.1f){
                 velocity.x = 0;
             }
@@ -103,18 +106,19 @@ public class PlayerMove : NetworkBehaviour
         if(Input.GetKey(KeyCode.F)){
             if (wheel == null) {
                 // wheel = wheel.transform;
-                wheel = GameObject.Find("HamsterWheel").transform;
+                wheel = GameObject.Find("HamsterWheel");
+                // wheel_animwheel.GetComponent<WheelAnimations>();
             }
             
             // wheel is reel
-            if ((wheel.position - transform.position).sqrMagnitude < 17f) {
+            if ((wheel.transform.position - transform.position).sqrMagnitude < 17f) {
                 // transform.position = wheel.position;
                 Vector3 move_direction;
-                move_direction = wheel.position - transform.position + new Vector3(0.5f,-0.5f,1f);
+                move_direction = wheel.transform.position - transform.position + new Vector3(0.5f,-0.5f,1f);
                 char_controller.Move(move_direction);
                 // movement_Speed = 1f;
                 player_animations.Walk(true);
-                WheelAnimations.Spin();
+                wheel.GetComponent<WheelAnimations>().Spin();
                 return;
             }
         }
@@ -129,12 +133,12 @@ public class PlayerMove : NetworkBehaviour
         //     // char_controller.Move(move_direction * movement_Speed * Time.deltaTime);
         // }
 
-        if(Input.GetKeyUp(KeyCode.F) && ((wheel.position - transform.position).sqrMagnitude < 10f)){
+        if(Input.GetKeyUp(KeyCode.F) && ((wheel.transform.position - transform.position).sqrMagnitude < 10f)){
             Vector3 move_direction;
             move_direction = new Vector3(3f,1f,1f);
             char_controller.Move(move_direction);
             
-            WheelAnimations.StopSpin();
+            wheel.GetComponent<WheelAnimations>().StopSpin();
             return;
         }
 

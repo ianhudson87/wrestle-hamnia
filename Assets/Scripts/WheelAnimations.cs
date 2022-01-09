@@ -5,7 +5,7 @@ using UnityEngine;
 public class WheelAnimations : MonoBehaviour
 {
 
-    private static Animator anim = null;
+    private Animator anim = null;
 
     // Start is called before the first frame update
     void Awake()
@@ -25,11 +25,11 @@ public class WheelAnimations : MonoBehaviour
         
     }
 
-    public static void Spin() {
+    public void Spin() {
         anim.SetBool("Spin", true);
     }
 
-    public static void StopSpin() {
+    public void StopSpin() {
         anim.SetBool("Spin", false);
     }
 }
