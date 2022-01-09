@@ -1,8 +1,9 @@
+using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttackInput : MonoBehaviour
+public class PlayerAttackInput : NetworkBehaviour
 {
     private GameObject melee_hit_detector;
     private CharacterAnimations player_animations;
@@ -17,22 +18,24 @@ public class PlayerAttackInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.J)){
-            player_animations.Defend(true);
-        }
-
-        if(Input.GetKeyUp(KeyCode.J)){
-            player_animations.UnfreezeAnimation();
-            player_animations.Defend(false);
-        }
-
-
-        if(Input.GetKeyDown(KeyCode.K)) {
-            if(Random.Range(0, 2) > 0){
-                player_animations.Attack_1();
+        if(isLocalPlayer){
+            if(Input.GetKeyDown(KeyCode.J)){
+                player_animations.Defend(true);
             }
-            else{
-                player_animations.Attack_2();
+
+            if(Input.GetKeyUp(KeyCode.J)){
+                player_animations.UnfreezeAnimation();
+                player_animations.Defend(false);
+            }
+
+
+            if(Input.GetKeyDown(KeyCode.K)) {
+                if(Random.Range(0, 2) > 0){
+                    player_animations.Attack_1();
+                }
+                else{
+                    player_animations.Attack_2();
+                }
             }
         }
     }

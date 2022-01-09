@@ -21,7 +21,6 @@ public class PlayerMove : NetworkBehaviour
     // WheelAnimations wheel_anim;
 
     public Camera cam;
-    public GameObject health_bar;
 
     private Vector3 velocity;
 
@@ -45,11 +44,6 @@ public class PlayerMove : NetworkBehaviour
             Move();
             Rotate();
             AnimateWalk();
-        }
-        else {
-            cam.enabled = false;
-            cam.GetComponent<AudioListener>().enabled = false;
-            health_bar.SetActive(false);
         }
     }
 
@@ -197,6 +191,8 @@ public class PlayerMove : NetworkBehaviour
     }
 
     void AnimateWalk(){
+        print(this);
+        print(char_controller.velocity);
         if(char_controller.velocity.sqrMagnitude != 0f){
             // print("walk animate");
             player_animations.Walk(true);
