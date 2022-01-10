@@ -50,7 +50,7 @@ public class PlayerMove : NetworkBehaviour
     void SetVelocity() {
         // gravity
         if(char_controller.isGrounded){
-            velocity.y = -0.01f;
+            velocity.y = -0.1f;
         }
         else{
             velocity.y -= gravity * Time.deltaTime;
@@ -143,56 +143,16 @@ public class PlayerMove : NetworkBehaviour
     }
 
     void Rotate(){
-        //get the mouse position
-        // Vector3 mousePosition = Input.mousePosition;
-        // mousePosition.z = 10.0f;
-        // Vector3 lookPos = cam.ScreenToWorldPoint(mousePosition);
-        // print(mousePosition);
-        // print(lookPos);
-        // Quaternion targetRotation = Quaternion.LookRotation(lookPos - transform.position, Vector3.forward);
-        // transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3f * Time.deltaTime);
-
         Vector2 mouse_delta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
         mouse_direction += mouse_delta;
 
-        cam.transform.localRotation = Quaternion.AngleAxis(mouse_direction.y, Vector3.left);
-        this.transform.localRotation = Quaternion.AngleAxis(mouse_direction.x, Vector3.up);
+        cam.transform.localRotation = Quaternion.AngleAxis(mouse_direction.y, Vector3.left); // rotate camera up and down. don't rotate model
+        this.transform.localRotation = Quaternion.AngleAxis(mouse_direction.x, Vector3.up); // rotate model left to right, also rotates camera
 
-
-
-
-
-
-
-
-        // Vector3 rotation_direction = Vector3.zero;
-        // // print("The values is" + Input.GetAxis(Axis.HORIZONTAL_AXIS));
-
-        // if(Input.GetAxis(Axis.HORIZONTAL_AXIS) < 0) {
-        //     // rotation_direction = transform.TransformPoint()
-        //     // print("here1");
-        //     rotation_direction = transform.TransformDirection(Vector3.left);
-        // }
-        // else if(Input.GetAxis(Axis.HORIZONTAL_AXIS) > 0) {
-        //     // print("here2");
-        //     rotation_direction = transform.TransformDirection(Vector3.right);
-        // }
-
-        // if(rotation_direction != Vector3.zero){
-        //     // print("here3");
-        //     // transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(rotation_direction), rotate_degrees_per_second * Time.deltaTime);
-        //     transform.rotation = Quaternion.RotateTowards(
-        //         transform.rotation,
-        //         Quaternion.LookRotation(rotation_direction),
-        //         rotate_degrees_per_second * Time.deltaTime);
-
-        // }
     }
 
     void AnimateWalk(){
-        print(this);
-        print(char_controller.velocity);
         if(char_controller.velocity.sqrMagnitude != 0f){
             // print("walk animate");
             player_animations.Walk(true);
