@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.mirror.steamworks.net": {
+      "version": "https://github.com/Chykary/FizzySteamworks.git?path=/com.mirror.steamworks.net",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "71be1e3246af9aad6dc4f28387f8fa3b4a1c3aa8"
+    },
+    "com.rlabrecque.steamworks.net": {
+      "version": "https://github.com/rlabrecque/Steamworks.NET.git?path=/com.rlabrecque.steamworks.net",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "27b1a1561c9b9ace7de1f8da17454d29547a63f7"
+    },
     "com.unity.collab-proxy": {
       "version": "1.15.4",
       "depth": 0,

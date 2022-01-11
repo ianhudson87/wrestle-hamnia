@@ -18,18 +18,21 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateGameState(GameState.setup);
+        UpdateGameState(GameState.lobby);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
     }
 
     public void UpdateGameState(GameState new_gamestate) {
         // print("here");
         switch(new_gamestate){
+            case GameState.lobby:
+                HandleLobby();
+                break;
             case GameState.setup:
                 HandleSetup();
                 break;
@@ -42,8 +45,32 @@ public class GameManager : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException("bad");
         }
-        // print("ere2");
         OnGameStateChanged?.Invoke(new_gamestate);
+    }
+
+    public void UpdateGameState(string new_gamestate) {
+        GameState e_newGamestate;
+        switch(new_gamestate){
+            case "lobby":
+                e_newGamestate = GameState.lobby;
+                break;
+            case "setup":
+                e_newGamestate = GameState.setup;
+                break;
+            case "fight":
+                e_newGamestate = GameState.fight;
+                break;
+            case "end":
+                e_newGamestate = GameState.end;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException("bad");
+        }
+        UpdateGameState(e_newGamestate);
+    }
+
+    void HandleLobby(){
+        gamestate = GameState.lobby;
     }
 
     void HandleSetup(){
@@ -60,6 +87,7 @@ public class GameManager : MonoBehaviour
 }
 
 public enum GameState{
+    lobby,
     setup,
     fight,
     end,

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject GameSetupMenu;
-    [SerializeField] private GameObject GameEndMenu;
+    // [SerializeField] private GameObject GameEndMenu;
 
     // Start is called before the first frame update
     void Awake()
@@ -26,7 +26,8 @@ public class MenuManager : MonoBehaviour
 
     void HandleGameStateChange(GameState new_gamestate){
         // print("here");
+        // print(new_gamestate == GameState.setup);
         GameSetupMenu.SetActive(new_gamestate == GameState.setup);
-        GameEndMenu.SetActive(new_gamestate == GameState.end);
+        // GameEndMenu.SetActive(new_gamestate == GameState.end);
     }
 }
