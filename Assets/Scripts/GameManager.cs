@@ -25,6 +25,18 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        if(players.Length <= 0) { return; }
+
+        int num_players_alive = 0;
+        foreach (GameObject player in players){
+            if(player.GetComponent<PlayerState>().isAlive){
+                num_players_alive++;
+            }
+        }
+
+        if(num_players_alive <= 1 && gamestate == GameState.fight){
+            UpdateGameState(GameState.end);
+        }
     }
 
     public void UpdateGameState(GameState new_gamestate) {

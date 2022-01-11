@@ -233,7 +233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0b24e8e78782a4da70a37f39656e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_health: 33
+  bar_value: 0
+  playerObject: {fileID: 9037913408446553020}
 --- !u!1 &1487135708645345372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,6 +1597,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87b2043cecda21a48a248542099b7162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
 --- !u!114 &980261000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1610,6 +1613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   blocking: 0
+  isAlive: 1
   health_bar: {fileID: 1204744935219976458}
 --- !u!114 &8064311223175258870
 MonoBehaviour:

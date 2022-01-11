@@ -6,24 +6,17 @@ public class PlayerState : MonoBehaviour
 {
     public int health = 100;
     public bool blocking = false;
-    public GameObject health_bar;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        // health_bar = transform.Find("UI").Find("HealthBar").gameObject;
-        // print("this");
-        // print("health_bar" + health_bar);   
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool isAlive = true;
+    [SerializeField] private GameObject health_bar;
 
     public void ApplyDamage(int damage){
         health -= damage;
+
+        if(health <= 0){
+            health = 0;
+            isAlive = false;
+        }
+
         UpdateHealthBar();
     }
 
