@@ -2,23 +2,26 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     public static GameManager instance;
 
+    [SyncVar]
     public GameState gamestate;
 
     public static event Action<GameState> OnGameStateChanged;
 
     void Awake(){
         instance = this;
+        UpdateGameState(GameState.lobby);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        UpdateGameState(GameState.lobby);
+        
     }
 
     // Update is called once per frame
@@ -40,7 +43,6 @@ public class GameManager : MonoBehaviour
     }
 
     public void UpdateGameState(GameState new_gamestate) {
-        // print("here");
         switch(new_gamestate){
             case GameState.lobby:
                 HandleLobby();

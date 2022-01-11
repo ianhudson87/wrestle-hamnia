@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class PlayerState : MonoBehaviour
+public class PlayerState : NetworkBehaviour
 {
     public string username;
     public int health = 100;
@@ -18,7 +19,9 @@ public class PlayerState : MonoBehaviour
             isAlive = false;
         }
 
-        UpdateHealthBar();
+        if(isLocalPlayer){
+            UpdateHealthBar();
+        }
     }
 
     void UpdateHealthBar(){

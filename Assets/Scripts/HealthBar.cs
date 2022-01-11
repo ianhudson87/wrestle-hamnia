@@ -21,6 +21,6 @@ public class HealthBar : MonoBehaviour {
     }
 
     public void UpdateValue(int health) {
-        hbar.value = (float)health;
+        hbar.value = health;
     }
 }
