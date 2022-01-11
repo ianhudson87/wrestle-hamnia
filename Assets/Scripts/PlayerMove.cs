@@ -65,33 +65,36 @@ public class PlayerMove : NetworkBehaviour
 
         float delta_velocity = acceleration * Time.deltaTime;
 
+        if (char_controller.isGrounded) {
         // w, s
-        if(Input.GetKey(KeyCode.W)){
-            velocity.z = Math.Min(movement_Speed, velocity.z + delta_velocity);
-        }
-        else if(Input.GetKey(KeyCode.S)){
-            velocity.z = Math.Max(-movement_Speed, velocity.z - delta_velocity);
-        }
-        else{
-            velocity.z *= Mathf.Pow(1/friction, Time.deltaTime);
-            if(Math.Abs(velocity.z) < 0.1f){
-                velocity.z = 0;
+            if(Input.GetKey(KeyCode.W)){
+                velocity.z = Math.Min(movement_Speed, velocity.z + delta_velocity);
+            }
+            else if(Input.GetKey(KeyCode.S)){
+                velocity.z = Math.Max(-movement_Speed, velocity.z - delta_velocity);
+            }
+            else{
+                velocity.z *= Mathf.Pow(1/friction, Time.deltaTime);
+                if(Math.Abs(velocity.z) < 0.1f){
+                    velocity.z = 0;
+                }
+            }
+
+            // a, d
+            if(Input.GetKey(KeyCode.D)){
+                velocity.x = Math.Min(movement_Speed, velocity.x + delta_velocity);
+            }
+            else if(Input.GetKey(KeyCode.A)){
+                velocity.x = Math.Max(-movement_Speed, velocity.x - delta_velocity);
+            }
+            else{
+                velocity.x *= Mathf.Pow(1/friction, Time.deltaTime);
+                if(Math.Abs(velocity.x) < 0.1f){
+                    velocity.x = 0;
+                }
             }
         }
 
-        // a, d
-        if(Input.GetKey(KeyCode.D)){
-            velocity.x = Math.Min(movement_Speed, velocity.x + delta_velocity);
-        }
-        else if(Input.GetKey(KeyCode.A)){
-            velocity.x = Math.Max(-movement_Speed, velocity.x - delta_velocity);
-        }
-        else{
-            velocity.x *= Mathf.Pow(1/friction, Time.deltaTime);
-            if(Math.Abs(velocity.x) < 0.1f){
-                velocity.x = 0;
-            }
-        }
     }
 
     void Move() {
@@ -153,7 +156,7 @@ public class PlayerMove : NetworkBehaviour
     }
 
     void AnimateWalk(){
-        if(char_controller.velocity.sqrMagnitude != 0f){
+        if(char_controller.velocity.sqrMagnitude != 0f && char_controller.isGrounded) {
             // print("walk animate");
             player_animations.Walk(true);
         }
