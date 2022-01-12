@@ -1,27 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class MeleeDamage : MonoBehaviour
+public class MeleeDamage : NetworkBehaviour
 {
     public LayerMask layer_mask;
-    public float radius = 0.1f;
+    public float radius = 0.3f;
     public float damage = 1f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] GameObject meleeHitDetector;
+    Transform meleeDetectorTransform;
+
+    void Start(){
+        meleeDetectorTransform = meleeHitDetector.GetComponent<Transform>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void Hit(){
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius, layer_mask);
-        if(hitColliders.Length>0){
+    public void AttemptHit(){
+        print("here");
+        Collider[] hitColliders = Physics.OverlapSphere(meleeDetectorTransform.position, radius, layer_mask);
+        print(hitColliders.Length);
+        if(hitColliders.Length>0 && isServer){
+            print("isserver");
             hitColliders[0].gameObject.GetComponent<PlayerState>().ApplyDamage(12);
         }
     }

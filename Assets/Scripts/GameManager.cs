@@ -27,7 +27,7 @@ public class GameManager : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        GameObject[] players = GetAllPlayers();
         if(players.Length <= 0) { return; }
 
         int num_players_alive = 0;
@@ -89,6 +89,11 @@ public class GameManager : NetworkBehaviour
 
     void HandleSetup(){
         gamestate = GameState.setup;
+
+        GameObject[] players = GetAllPlayers();
+        foreach (GameObject player in players){
+            player.GetComponent<PlayerState>().health = 100;
+        }
     }
 
     void HandleFight(){
@@ -97,6 +102,10 @@ public class GameManager : NetworkBehaviour
 
     void HandleEnd(){
         gamestate = GameState.end;
+    }
+
+    GameObject[] GetAllPlayers(){
+        return GameObject.FindGameObjectsWithTag("Player");
     }
 }
 

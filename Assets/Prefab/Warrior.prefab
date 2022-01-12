@@ -92,7 +92,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 674416922}
-  - component: {fileID: 674416923}
   m_Layer: 0
   m_Name: MeleeHitDetector
   m_TagString: Untagged
@@ -114,23 +113,6 @@ Transform:
   m_Father: {fileID: 9037913408446777244}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &674416923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674416921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5109a862d8fddb469224d7a897344d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer_mask:
-    serializedVersion: 2
-    m_Bits: 64
-  radius: 0.31
-  damage: 1
 --- !u!1 &1204744935219976458
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0b24e8e78782a4da70a37f39656e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bar_value: 0
   playerObject: {fileID: 9037913408446553020}
 --- !u!1 &1487135708645345372
 GameObject:
@@ -1427,6 +1408,7 @@ GameObject:
   - component: {fileID: 7459597836839759742}
   - component: {fileID: 980261000}
   - component: {fileID: 8064311223175258870}
+  - component: {fileID: 7684077249362179644}
   m_Layer: 6
   m_Name: Warrior
   m_TagString: Player
@@ -1611,10 +1593,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e842b0f208932424fb69813974a2659d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  username: 
   health: 100
+  maxHealth: 100
   blocking: 0
   isAlive: 1
   health_bar: {fileID: 1204744935219976458}
+  onHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8064311223175258870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1631,6 +1620,26 @@ MonoBehaviour:
   syncInterval: 0.1
   cam: {fileID: 413093220}
   ui: {fileID: 7117991493618005571}
+--- !u!114 &7684077249362179644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9037913408446553020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5109a862d8fddb469224d7a897344d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  layer_mask:
+    serializedVersion: 2
+    m_Bits: 64
+  radius: 0.3
+  damage: 1
+  meleeHitDetector: {fileID: 674416921}
 --- !u!1 &9037913408446553022
 GameObject:
   m_ObjectHideFlags: 0
