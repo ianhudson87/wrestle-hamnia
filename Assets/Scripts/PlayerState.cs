@@ -11,7 +11,7 @@ public class PlayerState : NetworkBehaviour
     public int maxHealth = 100;
     public bool blocking = false;
     public bool isAlive = true;
-    [SerializeField] private GameObject health_bar;
+    // [SerializeField] private GameObject health_bar;
     public UnityEvent onHealthChange;
 
     public void Awake(){
@@ -26,20 +26,24 @@ public class PlayerState : NetworkBehaviour
             isAlive = false;
         }
 
-        if(isLocalPlayer){
-            UpdateHealthBar();
-        }
+        // if(isLocalPlayer){
+        //     UpdateHealthBar();
+        // }
     }
 
     public void RestoreHealthToFull(){
         health = maxHealth;
 
-        if(isLocalPlayer){
-            UpdateHealthBar();
-        }
+        // if(isLocalPlayer){
+        //     UpdateHealthBar();
+        // }
     }
 
-    void UpdateHealthBar(){
-        health_bar.GetComponent<HealthBar>().UpdateValue(health);
+    // void UpdateHealthBar(){
+    //     health_bar.GetComponent<HealthBar>().UpdateValue(health);
+    // }
+
+    public int GetHealth(){
+        return health;
     }
 }

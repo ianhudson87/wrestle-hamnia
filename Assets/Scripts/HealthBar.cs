@@ -10,17 +10,25 @@ public class HealthBar : MonoBehaviour {
     private Slider hbar;
     [SerializeField] private GameObject playerObject;
 
-    // Start is called before the first frame update
-    void Start() {
-        int initialHealth = playerObject.GetComponent<PlayerState>().health; // initialize healthbar value
-
+    void Awake(){
         hbar = this.GetComponent<Slider>();
-        hbar.maxValue = initialHealth;
-
-        UpdateValue(initialHealth);
     }
 
-    public void UpdateValue(int health) {
-        hbar.value = health;
+    void Update(){
+        hbar.value = playerObject.GetComponent<PlayerState>().GetHealth();
     }
+
+    // Start is called before the first frame update
+    // void Start() {
+    //     int initialHealth = playerObject.GetComponent<PlayerState>().health; // initialize healthbar value
+
+    //     hbar = this.GetComponent<Slider>();
+    //     hbar.maxValue = initialHealth;
+
+    //     UpdateValue(initialHealth);
+    // }
+
+    // public void UpdateValue(int health) {
+    //     hbar.value = health;
+    // }
 }
