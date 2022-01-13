@@ -5,24 +5,13 @@ using UnityEngine.UI;
 
 public class EndMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject restart_game_button;
+    [SerializeField] private GameObject winnerDisplayText;
     // Start is called before the first frame update
-    void Awake(){
-        restart_game_button.GetComponent<Button>().onClick.AddListener(HandleRestartGame);
-    }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void HandleRestartGame(){
-        GameManager.instance.UpdateGameState(GameState.setup);
+    void Update(){
+        GameObject currentWinner = GameManager.instance.GetComponent<GameManager>().currentWinner;
+        if(currentWinner){
+            winnerDisplayText.GetComponent<Text>().text = string.Format("The winner is {0}!", currentWinner.GetComponent<PlayerState>().username);
+        }
     }
 }

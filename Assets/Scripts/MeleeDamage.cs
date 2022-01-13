@@ -16,12 +16,14 @@ public class MeleeDamage : NetworkBehaviour
     }
 
     public void AttemptHit(){
-        print("here");
+        // print("here");
         Collider[] hitColliders = Physics.OverlapSphere(meleeDetectorTransform.position, radius, layer_mask);
         print(hitColliders.Length);
         if(hitColliders.Length>0 && isServer){
-            print("isserver");
-            hitColliders[0].gameObject.GetComponent<PlayerState>().ApplyDamage(12);
+            // print("isserver");
+            if(GameManager.instance.gamestate == GameState.fight){
+                hitColliders[0].gameObject.GetComponent<PlayerState>().ApplyDamage(12);
+            }
         }
     }
 }

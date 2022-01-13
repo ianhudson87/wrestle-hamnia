@@ -6,7 +6,7 @@ using Mirror;
 
 public class PlayerState : NetworkBehaviour
 {
-    public string username;
+    [SyncVar] public string username;
     [SyncVar] public int health;
     public int maxHealth = 100;
     public bool blocking = false;
@@ -33,6 +33,7 @@ public class PlayerState : NetworkBehaviour
 
     public void RestoreHealthToFull(){
         health = maxHealth;
+        isAlive = true;
 
         // if(isLocalPlayer){
         //     UpdateHealthBar();

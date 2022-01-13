@@ -17,24 +17,30 @@ public class PlayerAttackInput : NetworkBehaviour
     void Update()
     {
         if(isLocalPlayer){
-            if(Input.GetKeyDown(KeyCode.J)){
-                player_animations.Defend(true);
+            if(Input.GetMouseButtonDown(0)){
+                player_animations.Attack_1();
             }
-
-            if(Input.GetKeyUp(KeyCode.J)){
-                player_animations.UnfreezeAnimation();
-                player_animations.Defend(false);
+            else if(Input.GetMouseButtonDown(1)){
+                player_animations.Attack_2();
             }
+            // if(Input.GetKeyDown(KeyCode.J)){
+            //     player_animations.Defend(true);
+            // }
+
+            // if(Input.GetKeyUp(KeyCode.J)){
+            //     player_animations.UnfreezeAnimation();
+            //     player_animations.Defend(false);
+            // }
 
 
-            if(Input.GetKeyDown(KeyCode.K)) {
-                if(Random.Range(0, 2) > 0){
-                    player_animations.Attack_1();
-                }
-                else{
-                    player_animations.Attack_2();
-                }
-            }
+            // if(Input.GetKeyDown(KeyCode.K)) {
+            //     if(Random.Range(0, 2) > 0){
+            //         player_animations.Attack_1();
+            //     }
+            //     else{
+            //         player_animations.Attack_2();
+            //     }
+            // }
         }
     }
 

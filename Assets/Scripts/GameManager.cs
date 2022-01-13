@@ -8,10 +8,11 @@ public class GameManager : NetworkBehaviour
 {
     public static GameManager instance;
 
-    [SyncVar]
-    public GameState gamestate;
+    [SyncVar] public GameState gamestate;
 
     public static event Action<GameState> OnGameStateChanged;
+
+    [SyncVar] public GameObject currentWinner = null; // player object of the current winner
 
     void Awake(){
         instance = this;
@@ -31,18 +32,22 @@ public class GameManager : NetworkBehaviour
         if(players.Length <= 0) { return; }
 
         int num_players_alive = 0;
+        GameObject lastAlivePlayerSeen = null;
         foreach (GameObject player in players){
             if(player.GetComponent<PlayerState>().isAlive){
                 num_players_alive++;
+                lastAlivePlayerSeen = player;
             }
         }
 
         if(num_players_alive <= 1 && gamestate == GameState.fight){
+            currentWinner = lastAlivePlayerSeen;
             UpdateGameState(GameState.end);
         }
     }
 
     public void UpdateGameState(GameState new_gamestate) {
+        if (!isServer) { return; }
         switch(new_gamestate){
             case GameState.lobby:
                 HandleLobby();
@@ -92,7 +97,7 @@ public class GameManager : NetworkBehaviour
 
         GameObject[] players = GetAllPlayers();
         foreach (GameObject player in players){
-            player.GetComponent<PlayerState>().health = 100;
+            player.GetComponent<PlayerState>().RestoreHealthToFull();
         }
     }
 
