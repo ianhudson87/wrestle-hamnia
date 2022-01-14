@@ -14,6 +14,8 @@ public class GameManager : NetworkBehaviour
 
     [SyncVar] public GameObject currentWinner = null; // player object of the current winner
 
+    [SyncVar] public float roundTimer = 0f;
+
     void Awake(){
         instance = this;
         UpdateGameState(GameState.lobby);
@@ -44,6 +46,12 @@ public class GameManager : NetworkBehaviour
             currentWinner = lastAlivePlayerSeen;
             UpdateGameState(GameState.end);
         }
+
+
+        if(gamestate == GameState.fight){
+            roundTimer += Time.deltaTime;
+        }
+
     }
 
     public void UpdateGameState(GameState new_gamestate) {
@@ -94,6 +102,8 @@ public class GameManager : NetworkBehaviour
 
     void HandleSetup(){
         gamestate = GameState.setup;
+
+        roundTimer = 0f;
 
         GameObject[] players = GetAllPlayers();
         foreach (GameObject player in players){

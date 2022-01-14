@@ -54,7 +54,7 @@ public class PlayerMove : NetworkBehaviour
 
         // gravity
         if(char_controller.isGrounded){
-            world_velocity.y = -0.1f * Time.deltaTime;
+            // world_velocity.y = -0.1f * Time.deltaTime;
         }
         else{
             world_velocity.y -= gravity * Time.deltaTime;
