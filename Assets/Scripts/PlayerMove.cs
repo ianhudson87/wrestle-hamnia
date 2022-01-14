@@ -10,9 +10,10 @@ public class PlayerMove : NetworkBehaviour
     private CharacterController char_controller;
     private CharacterAnimations player_animations;
 
-    public float movement_Speed = 3f;
+    public float max_movement_Speed = 3f;
+    public float jump_force = 9f;
     public const float gravity = 9.81f;
-    public float acceleration = 6f;
+    public float movement_force = 15f;
     public float rotation_speed = 0.15f;
     public float rotate_degrees_per_second = 180f;
     public float friction = 1000000f;
@@ -22,7 +23,7 @@ public class PlayerMove : NetworkBehaviour
 
     public Camera cam;
 
-    private Vector3 velocity;
+    private Vector3 world_velocity; // velocity of player with respect to world space
 
     private Vector2 mouse_direction = Vector2.zero;
 
@@ -30,7 +31,7 @@ public class PlayerMove : NetworkBehaviour
     void Awake() {
         char_controller = GetComponent<CharacterController>();
         player_animations = GetComponent<CharacterAnimations>();
-        velocity = Vector3.zero;
+        world_velocity = Vector3.zero;
         
         // wheel_anim = new WheelAnimations();
     }
@@ -50,48 +51,71 @@ public class PlayerMove : NetworkBehaviour
     void SetVelocity() {
         // gravity
         if(char_controller.isGrounded){
-            velocity.y = -0.1f;
+            world_velocity.y = -0.1f * Time.deltaTime;
         }
         else{
-            velocity.y -= gravity * Time.deltaTime;
+            world_velocity.y -= gravity * Time.deltaTime;
         }
 
         // jump
         if(Input.GetKeyDown(KeyCode.Space)){
             // print("jump");
             if (char_controller.isGrounded)
-                velocity.y = movement_Speed;
+                world_velocity.y = jump_force;
         }
 
-        float delta_velocity = acceleration * Time.deltaTime;
+
+
+
+        float delta_velocity = (movement_force) * Time.deltaTime;
 
         if (char_controller.isGrounded) {
         // w, s
             if(Input.GetKey(KeyCode.W)){
-                velocity.z = Math.Min(movement_Speed, velocity.z + delta_velocity);
+                world_velocity += delta_velocity * transform.TransformVector(Vector3.forward);
             }
             else if(Input.GetKey(KeyCode.S)){
-                velocity.z = Math.Max(-movement_Speed, velocity.z - delta_velocity);
+                world_velocity += delta_velocity * transform.TransformVector(Vector3.back);
             }
-            else{
-                velocity.z *= Mathf.Pow(1/friction, Time.deltaTime);
-                if(Math.Abs(velocity.z) < 0.1f){
-                    velocity.z = 0;
-                }
-            }
+            // else{
+            //     velocity.z *= Mathf.Pow(1/friction, Time.deltaTime);
+            //     if(Math.Abs(velocity.z) < 0.1f){
+            //         velocity.z = 0;
+            //     }
+            // }
 
             // a, d
             if(Input.GetKey(KeyCode.D)){
-                velocity.x = Math.Min(movement_Speed, velocity.x + delta_velocity);
+                world_velocity += delta_velocity * transform.TransformVector(Vector3.right);
             }
             else if(Input.GetKey(KeyCode.A)){
-                velocity.x = Math.Max(-movement_Speed, velocity.x - delta_velocity);
+                world_velocity += delta_velocity * transform.TransformVector(Vector3.left);
             }
-            else{
-                velocity.x *= Mathf.Pow(1/friction, Time.deltaTime);
-                if(Math.Abs(velocity.x) < 0.1f){
-                    velocity.x = 0;
-                }
+        }
+
+
+
+        // friction
+        // print(char_controller.velocity);
+        if(char_controller.isGrounded){
+            Vector2 horizontal_local_velocity = new Vector2(char_controller.velocity.x, char_controller.velocity.z);
+            float current_speed = Mathf.Sqrt(Vector2.SqrMagnitude(horizontal_local_velocity));
+            float frictional_force = (current_speed / max_movement_Speed) * movement_force;
+            float frictional_delta_velocity = frictional_force * Time.deltaTime;
+            // print(frictional_delta_velocity);
+            
+            if(current_speed != 0){
+                // Vector2 horizontal_local_direction = horizontal_local_velocity / current_speed;
+                // Vector3 local_direction = new Vector3(horizontal_local_direction.x, 0, horizontal_local_direction.y);
+                // Vector3 world_direction = transform.TransformVector(local_direction);
+                // print("local" + local_direction);
+                // print(world_direction);
+
+                // world_velocity -= new Vector3(world_direction.x * frictional_delta_velocity, 0 , world_direction.z * frictional_delta_velocity);
+
+                Vector2 horizontal_world_direction = horizontal_local_velocity / current_speed;
+
+                world_velocity -= new Vector3(horizontal_world_direction.x * frictional_delta_velocity, 0 , horizontal_world_direction.y * frictional_delta_velocity);
             }
         }
 
@@ -139,8 +163,6 @@ public class PlayerMove : NetworkBehaviour
             return;
         }
 
-
-        Vector3 world_velocity = transform.TransformVector(velocity);
         char_controller.Move(world_velocity * Time.deltaTime);
 
     }
