@@ -1549,8 +1549,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  movement_Speed: 3
-  acceleration: 8
+  max_movement_Speed: 3
+  jump_force: 9
+  movement_force: 15
   rotation_speed: 0.15
   rotate_degrees_per_second: 180
   friction: 1000000
@@ -1600,7 +1601,6 @@ MonoBehaviour:
   maxHealth: 100
   blocking: 0
   isAlive: 1
-  health_bar: {fileID: 1204744935219976458}
   onHealthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -1620,6 +1620,7 @@ MonoBehaviour:
   syncInterval: 0.1
   cam: {fileID: 413093220}
   ui: {fileID: 7117991493618005571}
+  playerObj: {fileID: 9037913408446553020}
 --- !u!114 &7684077249362179644
 MonoBehaviour:
   m_ObjectHideFlags: 0

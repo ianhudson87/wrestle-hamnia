@@ -16,7 +16,7 @@ public class LocalLobby : MonoBehaviour
     [SerializeField] GameObject lobbyButtons;
 
     void Awake(){
-        networkManager = networkManagerObj.GetComponent<NetworkManager>();
+        networkManager = networkManagerObj.GetComponent<NetworkManagerWIT>();
         gameManager = gameManagerObj.GetComponent<GameManager>();
     }
     void Start()

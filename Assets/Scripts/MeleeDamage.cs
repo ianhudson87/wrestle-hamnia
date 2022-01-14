@@ -27,11 +27,22 @@ public class MeleeDamage : NetworkBehaviour
                         hitColliders[0].gameObject.GetComponent<PlayerState>().ApplyDamage(10);
                         break;
                     case AttackType.heavy:
-                        hitColliders[0].gameObject.GetComponent<PlayerState>().ApplyDamage(20);
+                        GameObject playerObject = hitColliders[0].gameObject;
+                        playerObject.GetComponent<PlayerState>().ApplyDamage(20);
+                        print("playername" + playerObject.GetComponent<PlayerState>().username);
+                        BoopClientRpc(new Vector3(0, 10, 0), playerObject);
+                        // playerObject.
+                        // playerObject.GetComponent<PlayerMove>().ApplyBoopFromServer(new Vector3(0, 10, 0));
                         break;
                 }
             }
         }
+    }
+
+    [ClientRpc] void BoopClientRpc(Vector3 boop, GameObject playerObject){
+        print("got boop message");
+        print("playername" + playerObject.GetComponent<PlayerState>().username);
+        playerObject.GetComponent<PlayerMove>().ApplyBoop(boop);
     }
 }
 

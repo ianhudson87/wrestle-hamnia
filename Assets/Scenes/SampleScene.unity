@@ -1307,6 +1307,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1808350814}
+        m_TargetAssemblyTypeName: NetworkManagerWIT, Assembly-CSharp
+        m_MethodName: SetLocalUsername
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &703108978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,6 +1536,18 @@ MonoBehaviour:
       - m_Target: {fileID: 833203914}
         m_TargetAssemblyTypeName: LocalLobby, Assembly-CSharp
         m_MethodName: HostLocalGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1808350814}
+        m_TargetAssemblyTypeName: NetworkManagerWIT, Assembly-CSharp
+        m_MethodName: SetLocalUsername
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2667,6 +2691,18 @@ MonoBehaviour:
           m_StringArgument: setup
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1808350814}
+        m_TargetAssemblyTypeName: NetworkManagerWIT, Assembly-CSharp
+        m_MethodName: SetLocalUsername
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1248093900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3369,6 +3405,7 @@ MonoBehaviour:
   playerSpawnMethod: 0
   spawnPrefabs: []
   nameInputField: {fileID: 145583955}
+  localUsername: 
 --- !u!114 &1808350815
 MonoBehaviour:
   m_ObjectHideFlags: 0

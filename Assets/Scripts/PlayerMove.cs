@@ -25,6 +25,8 @@ public class PlayerMove : NetworkBehaviour
 
     private Vector3 world_velocity; // velocity of player with respect to world space
 
+    // [SyncVar] Vector3 delta_velocity_from_server = Vector3.zero; // server changes this (world) velocity vector when it wants to change the velocity of the player
+
     private Vector2 mouse_direction = Vector2.zero;
 
     // Start is called before the first frame update
@@ -49,6 +51,7 @@ public class PlayerMove : NetworkBehaviour
     }
 
     void SetVelocity() {
+
         // gravity
         if(char_controller.isGrounded){
             world_velocity.y = -0.1f * Time.deltaTime;
@@ -188,5 +191,8 @@ public class PlayerMove : NetworkBehaviour
         }
     }
 
+    public void ApplyBoop(Vector3 world_boop){
+        world_velocity += world_boop;
+    }
 
 }
