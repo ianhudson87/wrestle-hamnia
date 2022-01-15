@@ -10,7 +10,7 @@ public class PlayerState : NetworkBehaviour
     [SyncVar] public int health;
     public int maxHealth = 100;
     public bool blocking = false;
-    public bool isAlive = true;
+    [SyncVar] public bool isAlive = true;
     // [SerializeField] private GameObject health_bar;
     public UnityEvent onHealthChange;
 
