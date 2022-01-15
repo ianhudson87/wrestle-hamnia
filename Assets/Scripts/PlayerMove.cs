@@ -9,11 +9,13 @@ public class PlayerMove : NetworkBehaviour
 
     private CharacterController char_controller;
     private CharacterAnimations player_animations;
+    [SerializeField] private PlayerState playerState;
 
     public float max_movement_Speed = 3f;
     public float jump_force = 9f;
     public const float gravity = 9.81f;
     public float movement_force = 15f;
+    public float air_movement_force = 15f;
     public float rotation_speed = 0.15f;
     public float rotate_degrees_per_second = 180f;
     public float friction = 1000000f;
@@ -33,6 +35,7 @@ public class PlayerMove : NetworkBehaviour
     void Awake() {
         char_controller = GetComponent<CharacterController>();
         player_animations = GetComponent<CharacterAnimations>();
+        playerState = GetComponent<PlayerState>();
         world_velocity = Vector3.zero;
         
         // wheel_anim = new WheelAnimations();
@@ -42,7 +45,7 @@ public class PlayerMove : NetworkBehaviour
     void Update()
     {
         // print("here");
-        if(isLocalPlayer) {
+        if(isLocalPlayer && playerState.isAlive) {
             SetVelocity();
             Move();
             Rotate();
@@ -70,35 +73,28 @@ public class PlayerMove : NetworkBehaviour
 
 
 
+        // ground control
         float delta_velocity = (movement_force) * Time.deltaTime;
 
         if (char_controller.isGrounded) {
-        // w, s
+            // w, s
             if(Input.GetKey(KeyCode.W)){
                 world_velocity += delta_velocity * transform.TransformVector(Vector3.forward);
             }
-            else if(Input.GetKey(KeyCode.S)){
+            if(Input.GetKey(KeyCode.S)){
                 world_velocity += delta_velocity * transform.TransformVector(Vector3.back);
             }
-            // else{
-            //     velocity.z *= Mathf.Pow(1/friction, Time.deltaTime);
-            //     if(Math.Abs(velocity.z) < 0.1f){
-            //         velocity.z = 0;
-            //     }
-            // }
 
             // a, d
             if(Input.GetKey(KeyCode.D)){
                 world_velocity += delta_velocity * transform.TransformVector(Vector3.right);
             }
-            else if(Input.GetKey(KeyCode.A)){
+            if(Input.GetKey(KeyCode.A)){
                 world_velocity += delta_velocity * transform.TransformVector(Vector3.left);
             }
         }
 
-
-
-        // friction
+        // ground friction
         // print(char_controller.velocity);
         if(char_controller.isGrounded){
             Vector2 horizontal_local_velocity = new Vector2(char_controller.velocity.x, char_controller.velocity.z);
@@ -119,6 +115,62 @@ public class PlayerMove : NetworkBehaviour
                 Vector2 horizontal_world_direction = horizontal_local_velocity / current_speed;
 
                 world_velocity -= new Vector3(horizontal_world_direction.x * frictional_delta_velocity, 0 , horizontal_world_direction.y * frictional_delta_velocity);
+            }
+        }
+
+
+        // air control
+        
+        if(!char_controller.isGrounded){
+            Vector3 desiredVelocityChange = Vector3.zero;
+
+            float delta_air_velocity = air_movement_force * Time.deltaTime;
+
+            // w, s
+            if(Input.GetKey(KeyCode.W)){
+                desiredVelocityChange += delta_air_velocity * transform.TransformVector(Vector3.forward);
+            }
+            if(Input.GetKey(KeyCode.S)){
+                desiredVelocityChange += delta_air_velocity * transform.TransformVector(Vector3.back);
+            }
+
+            // a, d
+            if(Input.GetKey(KeyCode.D)){
+                desiredVelocityChange += delta_air_velocity * transform.TransformVector(Vector3.right);
+            }
+            if(Input.GetKey(KeyCode.A)){
+                desiredVelocityChange += delta_air_velocity * transform.TransformVector(Vector3.left);
+            }
+
+
+            // print("move" + desiredVelocityChange / Time.deltaTime);
+            world_velocity += desiredVelocityChange;
+
+            // rescale desiredDirection to have the same magnitude as the horizontal velocity vector.
+            // then project desiredDirection onto direction of horizontal velocity. Magnitude of that is "air velocity" kind of meaningless value.
+            Vector2 desiredDirection2D = new Vector2(desiredVelocityChange.x, desiredVelocityChange.z);
+            Vector2 moveDirection2D = new Vector2(char_controller.velocity.x, char_controller.velocity.z);
+
+            float angleBetweenDesiredAndActual = Vector2.Angle(desiredDirection2D, moveDirection2D);
+            // print(angleBetweenDesiredAndActual);
+            float cosOfAngle = Mathf.Cos(Mathf.Deg2Rad * angleBetweenDesiredAndActual);
+            // print(Mathf.Cos(90));
+            // print(cosOfAngle);
+
+            float airVelocity = cosOfAngle * Mathf.Sqrt(Vector2.SqrMagnitude(moveDirection2D));
+            // print(airVelocity);
+
+            float maxAirVelocity = max_movement_Speed; // try changing this to current horizontal velocity later
+
+            float airFrictionForce = (airVelocity / maxAirVelocity) * air_movement_force;
+            // print("frac" + airVelocity);
+            // print(airFrictionForce);
+
+
+            // print("friction" + new Vector3(airFrictionForce * desiredDirection2D.x, 0, airFrictionForce * desiredDirection2D.y));
+            float desiredDirectionMagnitude = Mathf.Sqrt(Vector2.SqrMagnitude(desiredDirection2D));
+            if(desiredDirectionMagnitude != 0){
+                world_velocity -= new Vector3(airFrictionForce * Time.deltaTime * desiredDirection2D.x, 0, airFrictionForce * Time.deltaTime * desiredDirection2D.y) / desiredDirectionMagnitude;
             }
         }
 

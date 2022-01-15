@@ -25,24 +25,14 @@ public class PlayerState : NetworkBehaviour
             health = 0;
             isAlive = false;
         }
-
-        // if(isLocalPlayer){
-        //     UpdateHealthBar();
-        // }
     }
 
     public void RestoreHealthToFull(){
         health = maxHealth;
         isAlive = true;
 
-        // if(isLocalPlayer){
-        //     UpdateHealthBar();
-        // }
     }
 
-    // void UpdateHealthBar(){
-    //     health_bar.GetComponent<HealthBar>().UpdateValue(health);
-    // }
 
     public int GetHealth(){
         return health;
