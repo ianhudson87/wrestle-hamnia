@@ -2362,7 +2362,7 @@ MonoBehaviour:
   layer_mask:
     serializedVersion: 2
     m_Bits: 64
-  radius: 0.3
+  radius: 0.7
   damage: 1
   meleeHitDetector: {fileID: 674416921}
 --- !u!1 &9123511642770193574

@@ -369,6 +369,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  healPeriod: 2
+  healAmountPerPeriod: 3
 --- !u!114 &4752643820495284397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,7 +403,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   clientAuthority: 0
-  animator: {fileID: 0}
+  animator: {fileID: 7883818473111665454}
 --- !u!1 &7382980284734507340
 GameObject:
   m_ObjectHideFlags: 0

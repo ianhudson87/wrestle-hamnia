@@ -6,7 +6,7 @@ using Mirror;
 public class MeleeDamage : NetworkBehaviour
 {
     public LayerMask layer_mask;
-    public float radius = 0.3f;
+    public float radius = 0.6f;
     public float damage = 1f;
     [SerializeField] GameObject meleeHitDetector;
     Transform meleeDetectorTransform;
@@ -28,11 +28,12 @@ public class MeleeDamage : NetworkBehaviour
                 switch(attackType){
                     case AttackType.light:
                         hitPlayerObject.GetComponent<PlayerState>().ApplyDamage(8);
-                        boopMultiplier = 3;
+                        boopMultiplier = 10;
                         break;
                     case AttackType.heavy:
                         hitPlayerObject.GetComponent<PlayerState>().ApplyDamage(3);
                         boopMultiplier = (hitPlayerObject.GetComponent<PlayerState>().maxHealth - hitPlayerObject.GetComponent<PlayerState>().health)/2;
+                        boopMultiplier = Mathf.Max(boopMultiplier, 10);
                         break;
                 }
                 print("playername" + hitPlayerObject.GetComponent<PlayerState>().username);

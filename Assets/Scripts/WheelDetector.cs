@@ -21,10 +21,7 @@ public class WheelDetector : NetworkBehaviour
     {
         if(isServer){
             if (Time.time > nextHeal){
-                if(playersOnWheel.Count == 1){
-                    // only heal if there is one person on the wheel
-                    HealPlayers(playersOnWheel, healAmountPerPeriod);
-                }
+                HealPlayers(playersOnWheel, healAmountPerPeriod);
                 nextHeal += healPeriod;
             }
         }
