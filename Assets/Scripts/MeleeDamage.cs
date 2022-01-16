@@ -28,7 +28,7 @@ public class MeleeDamage : NetworkBehaviour
                 switch(attackType){
                     case AttackType.light:
                         hitPlayerObject.GetComponent<PlayerState>().ApplyDamage(8);
-                        boopMultiplier = (hitPlayerObject.GetComponent<PlayerState>().maxHealth - hitPlayerObject.GetComponent<PlayerState>().health)/5;
+                        boopMultiplier = 3;
                         break;
                     case AttackType.heavy:
                         hitPlayerObject.GetComponent<PlayerState>().ApplyDamage(3);
