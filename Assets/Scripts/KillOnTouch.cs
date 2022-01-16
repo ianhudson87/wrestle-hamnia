@@ -11,7 +11,7 @@ public class KillOnTouch : NetworkBehaviour
             if(collider.gameObject.tag == "Player"){
                 collider.gameObject.GetComponent<PlayerState>().health = 0;
                 collider.gameObject.GetComponent<PlayerState>().isAlive = false; // kill the player
-                collider.gameObject.GetComponent<PlayerMove>().SetPosition(GameManager.instance.getResetPosition());
+                collider.gameObject.GetComponent<PlayerMove>().TargetSetPosition(GameManager.instance.getResetPosition());
             }
         }
     }

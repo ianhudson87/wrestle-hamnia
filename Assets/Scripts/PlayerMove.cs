@@ -249,6 +249,17 @@ public class PlayerMove : NetworkBehaviour
         world_velocity += world_boop;
     }
 
+    [TargetRpc] public void TargetSetPosition(Vector3 position){
+        // char_controller.Move(position - transform.position);
+        char_controller.enabled = false;
+        transform.position = position;
+        char_controller.enabled = true;
+    }
+
+    [TargetRpc] public void TargetSetWorldVelocity(Vector3 worldVelocity){
+        this.world_velocity = worldVelocity;
+    }
+
     public void SetPosition(Vector3 position){
         // char_controller.Move(position - transform.position);
         char_controller.enabled = false;

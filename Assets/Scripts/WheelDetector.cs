@@ -24,8 +24,8 @@ public class WheelDetector : NetworkBehaviour
                 if(playersOnWheel.Count == 1){
                     // only heal if there is one person on the wheel
                     HealPlayers(playersOnWheel, healAmountPerPeriod);
-                    nextHeal += healPeriod;
                 }
+                nextHeal += healPeriod;
             }
         }
     }
