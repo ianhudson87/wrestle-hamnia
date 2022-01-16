@@ -7,6 +7,9 @@ public class WheelDetector : NetworkBehaviour
 {
     [SyncVar] List<GameObject> playersOnWheel = new List<GameObject>();
     private WheelAnimations wheelAnimator;
+    [SerializeField] private int healPeriod = 1;
+    [SerializeField] private int healAmountPerPeriod = 5;
+    private float nextHeal = 0;
     
     
     void Start(){
@@ -16,7 +19,12 @@ public class WheelDetector : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        // print(playersOnWheel[0]);
+        if(isServer){
+            if (Time.time > nextHeal){
+                HealPlayers(playersOnWheel, healAmountPerPeriod);
+                nextHeal += healPeriod;
+            }
+        }
     }
 
     void OnTriggerEnter(Collider collider) {
@@ -46,6 +54,12 @@ public class WheelDetector : NetworkBehaviour
         }
         else{
             wheelAnimator.Spin();
+        }
+    }
+
+    void HealPlayers(List<GameObject> players, int healAmount){
+        foreach(GameObject player in players){
+            player.GetComponent<PlayerState>().Heal(healAmount);
         }
     }
 }

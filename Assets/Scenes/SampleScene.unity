@@ -1097,7 +1097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &545493288
 Transform:
   m_ObjectHideFlags: 0
@@ -3415,7 +3415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1461362054}
   m_Layer: 0
-  m_Name: Arena
+  m_Name: CageArena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

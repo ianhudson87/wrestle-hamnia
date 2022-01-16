@@ -33,8 +33,12 @@ public class PlayerState : NetworkBehaviour
 
     }
 
-
     public int GetHealth(){
         return health;
+    }
+
+    public void Heal(int healAmount){
+        health += healAmount;
+        health = Mathf.Min(health, maxHealth);
     }
 }
