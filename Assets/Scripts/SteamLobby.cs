@@ -50,6 +50,8 @@ public class SteamLobby : MonoBehaviour
     }
 
     void OnLobbyEntered(LobbyEnter_t callback){
+        NetworkManagerWIT.singleton.SetLocalUsername(SteamFriends.GetPersonaName());
+        // print("username is" + SteamFriends.GetPersonaName());
         if (NetworkServer.active){ return; } // if is host
 
         string host_address = SteamMatchmaking.GetLobbyData(
@@ -61,5 +63,6 @@ public class SteamLobby : MonoBehaviour
         network_manager.StartClient();
 
         buttons.SetActive(false);
+
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class NetworkManagerWIT : NetworkManager
 {
     [SerializeField] private GameObject nameInputField;
-    public string localUsername; // username of local player
+    public string localUsername; // username of local player. Will automatically get grabbed when set.
 
     new public static NetworkManagerWIT singleton;
 
@@ -40,7 +40,11 @@ public class NetworkManagerWIT : NetworkManager
         // NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
     // }
 
-    public void SetLocalUsername(){
+    public void SetLocalUsernameFromNameInput(){
         localUsername = nameInputField.GetComponent<InputField>().text;
+    }
+
+    public void SetLocalUsername(string username){
+        localUsername = username;
     }
 }
