@@ -31,14 +31,14 @@ public class LocalLobby : MonoBehaviour
     }
 
     public void HostLocalGame(){
-        networkManager.SetTransport(TransportType.kcp);
+        // networkManager.SetTransport(TransportType.kcp);
         networkManager.StartHost();
         gameManager.UpdateGameState(GameState.setup);
         lobbyButtons.SetActive(false);
     }
 
     public void JoinLocalGame(){
-        networkManager.SetTransport(TransportType.kcp);
+        // networkManager.SetTransport(TransportType.kcp);
         networkManager.networkAddress = joinInput.GetComponent<InputField>().text;
         networkManager.StartClient();
         lobbyButtons.SetActive(false);

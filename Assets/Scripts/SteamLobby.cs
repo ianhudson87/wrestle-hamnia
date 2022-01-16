@@ -25,7 +25,7 @@ public class SteamLobby : MonoBehaviour
     }
 
     public void HostLobby(){
-        network_manager.SetTransport(TransportType.steam);
+        // network_manager.SetTransport(TransportType.steam);
         buttons.SetActive(false);
 
         SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, network_manager.maxConnections);

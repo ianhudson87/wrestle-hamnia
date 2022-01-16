@@ -32,10 +32,10 @@ public class MeleeDamage : NetworkBehaviour
                         print("playername" + hitPlayerObject.GetComponent<PlayerState>().username);
                         Vector3 attackerDirection = this.gameObject.transform.TransformDirection(Vector3.forward);
                         Vector3 boopVector = attackerDirection;
-                        boopVector.y += 0.25f;
+                        boopVector.y += 0.5f;
 
-                        float boopMultiplier = (hitPlayerObject.GetComponent<PlayerState>().maxHealth / hitPlayerObject.GetComponent<PlayerState>().health) * 100;
-                        BoopClientRpc(boopVector, hitPlayerObject);
+                        float boopMultiplier = (hitPlayerObject.GetComponent<PlayerState>().maxHealth - hitPlayerObject.GetComponent<PlayerState>().health)/2;
+                        BoopClientRpc(boopVector * boopMultiplier, hitPlayerObject);
                         // playerObject.
                         // playerObject.GetComponent<PlayerMove>().ApplyBoopFromServer(new Vector3(0, 10, 0));
                         break;
