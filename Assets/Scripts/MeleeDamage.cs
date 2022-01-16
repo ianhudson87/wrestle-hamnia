@@ -24,16 +24,18 @@ public class MeleeDamage : NetworkBehaviour
             if(GameManager.instance.gamestate == GameState.fight){
                 switch(attackType){
                     case AttackType.light:
-                        hitColliders[0].gameObject.GetComponent<PlayerState>().ApplyDamage(10);
+                        hitColliders[0].gameObject.GetComponent<PlayerState>().ApplyDamage(8);
                         break;
                     case AttackType.heavy:
                         GameObject hitPlayerObject = hitColliders[0].gameObject;
-                        hitPlayerObject.GetComponent<PlayerState>().ApplyDamage(20);
+                        hitPlayerObject.GetComponent<PlayerState>().ApplyDamage(3);
                         print("playername" + hitPlayerObject.GetComponent<PlayerState>().username);
                         Vector3 attackerDirection = this.gameObject.transform.TransformDirection(Vector3.forward);
-                        Vector3 boopVector = attackerDirection * 30;
-                        boopVector.y += 20;
-                        BoopClientRpc(boopVector, hitPlayerObject);
+                        Vector3 boopVector = attackerDirection;
+                        boopVector.y += 0.5f;
+
+                        float boopMultiplier = (hitPlayerObject.GetComponent<PlayerState>().maxHealth - hitPlayerObject.GetComponent<PlayerState>().health)/2;
+                        BoopClientRpc(boopVector * boopMultiplier, hitPlayerObject);
                         // playerObject.
                         // playerObject.GetComponent<PlayerMove>().ApplyBoopFromServer(new Vector3(0, 10, 0));
                         break;

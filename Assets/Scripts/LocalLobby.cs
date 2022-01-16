@@ -7,7 +7,7 @@ using Mirror;
 public class LocalLobby : MonoBehaviour
 {
     [SerializeField] GameObject networkManagerObj;
-    NetworkManager networkManager;
+    NetworkManagerWIT networkManager;
     [SerializeField] GameObject gameManagerObj;
     GameManager gameManager;
     [SerializeField] GameObject hostButton;
@@ -31,12 +31,14 @@ public class LocalLobby : MonoBehaviour
     }
 
     public void HostLocalGame(){
+        // networkManager.SetTransport(TransportType.kcp);
         networkManager.StartHost();
         gameManager.UpdateGameState(GameState.setup);
         lobbyButtons.SetActive(false);
     }
 
     public void JoinLocalGame(){
+        // networkManager.SetTransport(TransportType.kcp);
         networkManager.networkAddress = joinInput.GetComponent<InputField>().text;
         networkManager.StartClient();
         lobbyButtons.SetActive(false);

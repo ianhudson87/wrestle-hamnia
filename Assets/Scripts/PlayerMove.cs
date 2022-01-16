@@ -9,7 +9,7 @@ public class PlayerMove : NetworkBehaviour
 
     private CharacterController char_controller;
     private CharacterAnimations player_animations;
-    [SerializeField] private PlayerState playerState;
+    private PlayerState playerState;
 
     public float max_movement_Speed = 3f;
     public float jump_force = 9f;
@@ -45,11 +45,13 @@ public class PlayerMove : NetworkBehaviour
     void Update()
     {
         // print("here");
-        if(isLocalPlayer && playerState.isAlive) {
-            SetVelocity();
-            Move();
+        if(isLocalPlayer) {
+            if(playerState.isAlive){
+                SetVelocity();
+                Move();
+                AnimateWalk();
+            }
             Rotate();
-            AnimateWalk();
         }
     }
 
@@ -256,7 +258,9 @@ public class PlayerMove : NetworkBehaviour
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit) {
-        Vector3 deltaWorldVelocity = hit.normal * Vector3.Dot(world_velocity, hit.normal);
+        Vector3 horizontalNormalForce = hit.normal;
+        horizontalNormalForce.y = 0; // only consider horizontal normal force
+        Vector3 deltaWorldVelocity = horizontalNormalForce * Vector3.Dot(world_velocity, horizontalNormalForce);
         // deltaWorldVelocity.y = 0; // only consider horizontal normal force
 
         world_velocity -= deltaWorldVelocity;

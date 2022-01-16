@@ -10,12 +10,12 @@ public class SteamLobby : MonoBehaviour
     protected Callback<LobbyCreated_t> lobbyCreated;
     protected Callback<GameLobbyJoinRequested_t> gameLobbyJoinRequested;
     protected Callback<LobbyEnter_t> lobbyEntered;
-    private NetworkManager network_manager;
+    private NetworkManagerWIT network_manager;
     private const string host_address_key = "host address";
 
     void Start()
     {
-        network_manager = GetComponent<NetworkManager>();
+        network_manager = GetComponent<NetworkManagerWIT>();
 
         if (!SteamManager.Initialized){ return; }
 
@@ -25,6 +25,7 @@ public class SteamLobby : MonoBehaviour
     }
 
     public void HostLobby(){
+        // network_manager.SetTransport(TransportType.steam);
         buttons.SetActive(false);
 
         SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, network_manager.maxConnections);
