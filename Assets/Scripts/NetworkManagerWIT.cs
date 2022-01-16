@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using UnityEngine.UI;
+using Mirror.FizzySteam;
+using kcp2k;
 
 public class NetworkManagerWIT : NetworkManager
 {
@@ -17,8 +19,30 @@ public class NetworkManagerWIT : NetworkManager
         singleton = this;
     }
 
-    void SetTransport(Transport newTransport){
-        this.transport = newTransport;
+    public void SetTransport(TransportType newTransportType){
+        switch(newTransportType){
+            case TransportType.steam:
+                this.transport = GetComponent<FizzySteamworks>();
+                break;
+            case TransportType.kcp:
+                this.transport = GetComponent<KcpTransport>();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void SetTransport(string newTransportType){
+        switch(newTransportType){
+            case "steam":
+                SetTransport(TransportType.steam);
+                break;
+            case "kcp":
+                SetTransport(TransportType.kcp);
+                break;
+            default:
+                break;
+        }
     }
 
     // public override void OnServerAddPlayer(NetworkConnection conn) {
@@ -47,4 +71,9 @@ public class NetworkManagerWIT : NetworkManager
     public void SetLocalUsername(string username){
         localUsername = username;
     }
+}
+
+public enum TransportType{
+    steam,
+    kcp
 }
