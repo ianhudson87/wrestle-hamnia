@@ -16,6 +16,8 @@ public class GameManager : NetworkBehaviour
 
     [SyncVar] public float roundTimer = 0f;
 
+    [SerializeField] private Vector3 resetPosition;
+
     void Awake(){
         instance = this;
         UpdateGameState(GameState.lobby);
@@ -113,6 +115,7 @@ public class GameManager : NetworkBehaviour
 
     void HandleFight(){
         gamestate = GameState.fight;
+        RpcTellClientsToSetPosition(resetPosition);
     }
 
     void HandleEnd(){
@@ -122,6 +125,20 @@ public class GameManager : NetworkBehaviour
     GameObject[] GetAllPlayers(){
         return GameObject.FindGameObjectsWithTag("Player");
     }
+
+    [ClientRpc] void RpcTellClientsToSetPosition(Vector3 newPosition){
+        print("reset position" + NetworkClient.localPlayer.gameObject);
+        NetworkClient.localPlayer.gameObject.GetComponent<PlayerMove>().SetPosition(newPosition);
+    }
+    // void SetAllPlayerPositions(Vector3 newPosition){
+    //     if(isServer){
+    //         GameObject[] players = GetAllPlayers();
+    //         foreach (GameObject player in players){
+    //             print("set position");
+    //             player.transform.position = newPosition;
+    //         }
+    //     }
+    // }
 }
 
 public enum GameState{
