@@ -20,7 +20,7 @@ public class GameManager : NetworkBehaviour
 
     void Awake(){
         instance = this;
-        UpdateGameState(GameState.lobby);
+        UpdateGameState(GameState.setup);
     }
 
     // Start is called before the first frame update
@@ -59,9 +59,6 @@ public class GameManager : NetworkBehaviour
     public void UpdateGameState(GameState new_gamestate) {
         if (!isServer) { return; }
         switch(new_gamestate){
-            case GameState.lobby:
-                HandleLobby();
-                break;
             case GameState.setup:
                 HandleSetup();
                 break;
@@ -80,9 +77,6 @@ public class GameManager : NetworkBehaviour
     public void UpdateGameState(string new_gamestate) {
         GameState e_newGamestate;
         switch(new_gamestate){
-            case "lobby":
-                e_newGamestate = GameState.lobby;
-                break;
             case "setup":
                 e_newGamestate = GameState.setup;
                 break;
@@ -96,10 +90,6 @@ public class GameManager : NetworkBehaviour
                 throw new ArgumentOutOfRangeException("bad");
         }
         UpdateGameState(e_newGamestate);
-    }
-
-    void HandleLobby(){
-        gamestate = GameState.lobby;
     }
 
     void HandleSetup(){
@@ -116,6 +106,7 @@ public class GameManager : NetworkBehaviour
     void HandleFight(){
         gamestate = GameState.fight;
         RpcTellClientsToSetPosition(resetPosition);
+        RpcTellClientsToSetVelocity(Vector3.zero);
     }
 
     void HandleEnd(){
@@ -127,8 +118,12 @@ public class GameManager : NetworkBehaviour
     }
 
     [ClientRpc] void RpcTellClientsToSetPosition(Vector3 newPosition){
-        print("reset position" + NetworkClient.localPlayer.gameObject);
+        // print("reset position" + NetworkClient.localPlayer.gameObject);
         NetworkClient.localPlayer.gameObject.GetComponent<PlayerMove>().SetPosition(newPosition);
+    }
+
+    [ClientRpc] void RpcTellClientsToSetVelocity(Vector3 newVelocity){
+        NetworkClient.localPlayer.gameObject.GetComponent<PlayerMove>().SetWorldVelocity(newVelocity);
     }
     // void SetAllPlayerPositions(Vector3 newPosition){
     //     if(isServer){
@@ -142,7 +137,6 @@ public class GameManager : NetworkBehaviour
 }
 
 public enum GameState{
-    lobby,
     setup,
     fight,
     end,

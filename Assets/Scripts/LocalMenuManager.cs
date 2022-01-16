@@ -11,7 +11,6 @@ public class LocalMenuManager : MonoBehaviour
         GameState gameState = gameManager.GetComponent<GameManager>().gamestate;
 
         setupMenu.SetActive(gameState == GameState.setup);
-        lobbyMenu.SetActive(gameState == GameState.lobby);
         fightMenu.SetActive(gameState == GameState.fight);
         endMenu.SetActive(gameState == GameState.end);
     }

@@ -251,4 +251,15 @@ public class PlayerMove : NetworkBehaviour
         char_controller.Move(position - transform.position);
     }
 
+    public void SetWorldVelocity(Vector3 worldVelocity){
+        this.world_velocity = worldVelocity;
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit) {
+        Vector3 deltaWorldVelocity = hit.normal * Vector3.Dot(world_velocity, hit.normal);
+        // deltaWorldVelocity.y = 0; // only consider horizontal normal force
+
+        world_velocity -= deltaWorldVelocity;
+    }
+
 }

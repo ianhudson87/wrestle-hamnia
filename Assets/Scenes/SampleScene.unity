@@ -1129,6 +1129,7 @@ MonoBehaviour:
   gamestate: 0
   currentWinner: {fileID: 0}
   roundTimer: 0
+  resetPosition: {x: 6, y: 3, z: 6}
 --- !u!114 &545493290
 MonoBehaviour:
   m_ObjectHideFlags: 0
