@@ -15,11 +15,11 @@ C:/Users/huzai/Documents/GITHUB/wrestle-hamnia
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57002
+62781
 Successfully changed project path to: C:/Users/huzai/Documents/GITHUB/wrestle-hamnia
 C:/Users/huzai/Documents/GITHUB/wrestle-hamnia
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 44.15 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 44.49 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.25f1 (9b9180224418)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/Resources/UnitySubsystems
@@ -35,68 +35,68 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56036
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56924
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004059 seconds.
+Registered in 0.004020 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 39.79 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 39.31 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.618 seconds
+- Completed reload, in  0.637 seconds
 Domain Reload Profiling:
-	ReloadAssembly (619ms)
-		BeginReloadAssembly (64ms)
+	ReloadAssembly (637ms)
+		BeginReloadAssembly (66ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (470ms)
-			LoadAssemblies (61ms)
+		EndReloadAssembly (486ms)
+			LoadAssemblies (64ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (161ms)
+			SetupTypeCache (169ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (30ms)
-			SetupLoadedEditorAssemblies (174ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (180ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (40ms)
+				RefreshPlugins (39ms)
 				BeforeProcessingInitializeOnLoad (13ms)
-				ProcessInitializeOnLoadAttributes (86ms)
-				ProcessInitializeOnLoadMethodAttributes (29ms)
+				ProcessInitializeOnLoadAttributes (93ms)
+				ProcessInitializeOnLoadMethodAttributes (28ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.010497 seconds.
+Registered in 0.010220 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.57 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.56 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.129 seconds
+- Completed reload, in  1.161 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1130ms)
-		BeginReloadAssembly (155ms)
+	ReloadAssembly (1162ms)
+		BeginReloadAssembly (166ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (21ms)
-		EndReloadAssembly (904ms)
-			LoadAssemblies (105ms)
+			CreateAndSetChildDomain (22ms)
+		EndReloadAssembly (917ms)
+			LoadAssemblies (108ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (320ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (48ms)
+			SetupTypeCache (329ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (50ms)
 			SetupLoadedEditorAssemblies (333ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (6ms)
@@ -112,15 +112,15 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.52 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1994 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 86.0 MB.
 System memory in use after: 86.1 MB.
 
 Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 2422.
-Total: 3.195700 ms (FindLiveObjects: 0.209400 ms CreateObjectMapping: 0.083100 ms MarkObjects: 2.782600 ms  DeleteObjects: 0.119500 ms)
+Total: 3.121700 ms (FindLiveObjects: 0.226000 ms CreateObjectMapping: 0.069100 ms MarkObjects: 2.724700 ms  DeleteObjects: 0.100900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -134,800 +134,89 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Prefab/Hamster 1.prefab
-  artifactKey: Guid(bd28553395ae34c44ba4fcde58a579df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster 1.prefab using Guid(bd28553395ae34c44ba4fcde58a579df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '580852f4ec2d77552165d41a2ad3d47d') in 0.256713 seconds 
-  Import took 0.262018 seconds .
+  path: Assets/Models/Hamster/HamsterAttack2.fbx
+  artifactKey: Guid(db0d2ad19d6bb464190e6d2d4af6beef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Hamster/HamsterAttack2.fbx using Guid(db0d2ad19d6bb464190e6d2d4af6beef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f6608879f7ecbcb099b507832656469') in 0.243338 seconds 
+  Import took 0.247132 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.255834 seconds.
-  path: Assets/Mirror
-  artifactKey: Guid(5cf8eb36be0834b3da408c694a41cb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Mirror using Guid(5cf8eb36be0834b3da408c694a41cb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d001bc96f78cd5e16263b6b5813437a') in 0.002339 seconds 
-  Import took 0.006082 seconds .
+  Time since last request: 10.346901 seconds.
+  path: Assets/Models/Hamster/Scene.anim
+  artifactKey: Guid(941181023a286f44289b7c06137450af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Hamster/Scene.anim using Guid(941181023a286f44289b7c06137450af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd795772ee2145497992924ffa847777c') in 0.014268 seconds 
+  Import took 0.017736 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.685359 seconds.
-  path: Assets/Models/Hamster/Hamster ver0.1.0 1.fbx
-  artifactKey: Guid(4b102f73568b0c847bf8189cf8f2982b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Hamster/Hamster ver0.1.0 1.fbx using Guid(4b102f73568b0c847bf8189cf8f2982b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff3d0e5c9e552d1352f6fa07f46b1cd3') in 0.195289 seconds 
-  Import took 0.199049 seconds .
+  Time since last request: 15.754810 seconds.
+  path: Assets/Models/Hamster/Attack2.anim
+  artifactKey: Guid(941181023a286f44289b7c06137450af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Hamster/Attack2.anim using Guid(941181023a286f44289b7c06137450af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '206393bda16cc091a2d1eea38559c44a') in 0.011840 seconds 
+  Import took 0.015364 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 122.841608 seconds.
-  path: Assets/Prefab/Warrior 1.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Warrior 1.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c46b1a40a61c84feda263304dbf4b4a') in 0.112395 seconds 
-  Import took 0.117775 seconds .
+  Time since last request: 11.194303 seconds.
+  path: Assets/ParrelSync
+  artifactKey: Guid(2739caeae15c82940a97a934ae6f724d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ParrelSync using Guid(2739caeae15c82940a97a934ae6f724d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9959a28ebae4f59173c8bbc4b783a43f') in 0.003814 seconds 
+  Import took 0.007954 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 29.555569 seconds.
-  path: Assets/Prefab/Warrior 1.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Warrior 1.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b45851fabd2158ddabd4792163b541c') in 0.076852 seconds 
-  Import took 0.082084 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.489439 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79177a175b61327b7051d66744bf1317') in 0.076821 seconds 
-  Import took 0.081620 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 47.757940 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef013f979fe95dd360b8527e550af9a2') in 0.027680 seconds 
-  Import took 0.031556 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.641086 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86f28a12897deced5ed40d5dc4ec08c8') in 0.078544 seconds 
-  Import took 0.083493 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.738379 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5edd0c465eef7d0f2142b52918ced28') in 0.079341 seconds 
-  Import took 0.084552 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 24.637645 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da63ed2eb58f031a14b6caa06e8e7f08') in 0.087974 seconds 
-  Import took 0.092860 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 56.649151 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b5eb410cc5ef86939656426d531b8aa') in 0.081476 seconds 
-  Import took 0.086750 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.087149 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '612e2116e7d249bad90849bbf4a12579') in 0.078374 seconds 
-  Import took 0.083464 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 24.499012 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1168cfdbb2732c39dba12fb0033c4344') in 0.077670 seconds 
-  Import took 0.082524 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.586938 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f95adf3c41db9ee600c3828ae744f114') in 0.077212 seconds 
-  Import took 0.082068 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 18.452186 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b644434511d741509ee8f7b614e5fdc') in 0.080399 seconds 
-  Import took 0.085305 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.967584 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf442c5b49ed22135a0bfb367680b462') in 0.077132 seconds 
-  Import took 0.082360 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 34.467969 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e97d08478d2b5fb91055f09f43f8737') in 0.079770 seconds 
-  Import took 0.084974 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.004506 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74342cbcccf609cf396ed0665a572978') in 0.077314 seconds 
-  Import took 0.082182 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 37.622288 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a23ca5c73e0798c4fbddf2716f33d4f') in 0.081061 seconds 
-  Import took 0.086168 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.010045 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.119 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1120ms)
-		BeginReloadAssembly (139ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (39ms)
-		EndReloadAssembly (908ms)
-			LoadAssemblies (106ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (333ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (41ms)
-			SetupLoadedEditorAssemblies (327ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (98ms)
-				ProcessInitializeOnLoadAttributes (192ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (11ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.57 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 101.6 MB.
-System memory in use after: 101.7 MB.
-
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 2468.
-Total: 3.238000 ms (FindLiveObjects: 0.215400 ms CreateObjectMapping: 0.070000 ms MarkObjects: 2.927000 ms  DeleteObjects: 0.024500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 125.124781 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '084be33e162650bda625734b3fb30122') in 0.181206 seconds 
-  Import took 0.185809 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009966 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.092 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1092ms)
-		BeginReloadAssembly (133ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (37ms)
-		EndReloadAssembly (888ms)
-			LoadAssemblies (107ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (323ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (39ms)
-			SetupLoadedEditorAssemblies (314ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (92ms)
-				ProcessInitializeOnLoadAttributes (186ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (11ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 101.7 MB.
-System memory in use after: 101.8 MB.
-
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 2471.
-Total: 2.928700 ms (FindLiveObjects: 0.154000 ms CreateObjectMapping: 0.065100 ms MarkObjects: 2.684700 ms  DeleteObjects: 0.023700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 50.804988 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2af41ca7acb3ed34d872ca69e2bbfff') in 0.184817 seconds 
-  Import took 0.195261 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.419011 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8eef23905fb4e3175cdeadf938db904') in 0.099334 seconds 
-  Import took 0.104269 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.317056 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '266a7599fcd8250382d0eb591e0f63d9') in 0.079762 seconds 
-  Import took 0.084632 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.179965 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e571ba01d8ee31d0af67e3454e693f1') in 0.078476 seconds 
-  Import took 0.083308 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.553040 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12ad51a6a17850b2209934d4ac6ef1f5') in 0.079054 seconds 
-  Import took 0.084191 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.719765 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b02d6f059759b8cd1fb2d7f0e7139bb') in 0.077059 seconds 
-  Import took 0.081756 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.932104 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '829a0099c027bafc8ca2739b3aa55486') in 0.081023 seconds 
-  Import took 0.086132 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.399350 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eea5235d180165955f3a1d0281c9b559') in 0.077477 seconds 
-  Import took 0.082334 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.765840 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93bc517343b88e82bcbbc2a49b39fa12') in 0.081644 seconds 
-  Import took 0.086807 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009659 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.060 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1061ms)
-		BeginReloadAssembly (121ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (37ms)
-		EndReloadAssembly (870ms)
-			LoadAssemblies (104ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (313ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (39ms)
-			SetupLoadedEditorAssemblies (316ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (93ms)
-				ProcessInitializeOnLoadAttributes (187ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (11ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.58 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 101.7 MB.
-System memory in use after: 101.8 MB.
-
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 2474.
-Total: 3.067200 ms (FindLiveObjects: 0.224000 ms CreateObjectMapping: 0.069800 ms MarkObjects: 2.731500 ms  DeleteObjects: 0.040700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 65.514664 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a49dd83bdd4ac7fb2f60e8908feb4595') in 0.177737 seconds 
-  Import took 0.182613 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.869240 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0c1b1b382c9eaf3ad2e995788d45ce8') in 0.081867 seconds 
-  Import took 0.087013 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.658765 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20273ad884c127b29f268fdf92d1a212') in 0.078845 seconds 
-  Import took 0.084135 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 31.244618 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfe62e54b795c6e376430eb2ce26f28b') in 0.079055 seconds 
-  Import took 0.084141 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.174684 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd04148571c5995afc6ff33630ec8a51') in 0.079028 seconds 
-  Import took 0.084465 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.545536 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69cf70b6cee2f464f8cbbd0a5bf6b11e') in 0.079941 seconds 
-  Import took 0.084894 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 100.639491 seconds.
+  Time since last request: 9.823515 seconds.
   path: Assets/Models/Hamster/HamsterController.controller
   artifactKey: Guid(5380f5e1e4a02b042a43f68014b17091) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Hamster/HamsterController.controller using Guid(5380f5e1e4a02b042a43f68014b17091) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9bcce2cfe5bdcd9b4deac923ba74f02') in 0.005311 seconds 
-  Import took 0.009829 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.855661 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '087f6f55ae50cf5013ae0cc34e262eaa') in 0.033450 seconds 
-  Import took 0.037192 seconds .
+Start importing Assets/Models/Hamster/HamsterController.controller using Guid(5380f5e1e4a02b042a43f68014b17091) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3cd2929bfc54cba9f4be9ae5ce8c0b6') in 0.013374 seconds 
+  Import took 0.017109 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.010595 seconds.
+Registered in 0.010005 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.57 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.05 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.099 seconds
+- Completed reload, in  1.313 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1099ms)
-		BeginReloadAssembly (126ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (38ms)
-		EndReloadAssembly (897ms)
-			LoadAssemblies (113ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (338ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (312ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (93ms)
-				ProcessInitializeOnLoadAttributes (183ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (11ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.56 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 101.7 MB.
-System memory in use after: 101.9 MB.
-
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 2477.
-Total: 2.884100 ms (FindLiveObjects: 0.156000 ms CreateObjectMapping: 0.064000 ms MarkObjects: 2.634700 ms  DeleteObjects: 0.028200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 828.602275 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '959dca07ba9129f592b4330e82164034') in 0.143764 seconds 
-  Import took 0.147999 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 41.497493 seconds.
-  path: Assets/Scenes
-  artifactKey: Guid(c3623dae5d9b697448e6ab28db702fde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes using Guid(c3623dae5d9b697448e6ab28db702fde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c28ff8ca8c80181b88ed3ac194ac4ec') in 0.002463 seconds 
-  Import took 0.006147 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009955 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.59 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.063 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1063ms)
-		BeginReloadAssembly (123ms)
+	ReloadAssembly (1314ms)
+		BeginReloadAssembly (156ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (38ms)
-		EndReloadAssembly (870ms)
-			LoadAssemblies (105ms)
+			CreateAndSetChildDomain (48ms)
+		EndReloadAssembly (1074ms)
+			LoadAssemblies (127ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (315ms)
+			SetupTypeCache (397ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (39ms)
-			SetupLoadedEditorAssemblies (309ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (376ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
+				InitializePlatformSupportModulesInManaged (7ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (92ms)
-				ProcessInitializeOnLoadAttributes (180ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (11ms)
+				BeforeProcessingInitializeOnLoad (112ms)
+				ProcessInitializeOnLoadAttributes (219ms)
+				ProcessInitializeOnLoadMethodAttributes (21ms)
+				AfterProcessingInitializeOnLoad (14ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.57 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.59 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 101.8 MB.
-System memory in use after: 101.9 MB.
+System memory in use before: 87.9 MB.
+System memory in use after: 88.0 MB.
 
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 2480.
-Total: 3.187500 ms (FindLiveObjects: 0.208900 ms CreateObjectMapping: 0.191500 ms MarkObjects: 2.757800 ms  DeleteObjects: 0.028500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.011265 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.61 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.061 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1062ms)
-		BeginReloadAssembly (119ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (33ms)
-		EndReloadAssembly (871ms)
-			LoadAssemblies (107ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (314ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (316ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (97ms)
-				ProcessInitializeOnLoadAttributes (184ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (11ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.57 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 101.8 MB.
-System memory in use after: 101.9 MB.
-
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 2482.
-Total: 3.079300 ms (FindLiveObjects: 0.243100 ms CreateObjectMapping: 0.069700 ms MarkObjects: 2.747200 ms  DeleteObjects: 0.018100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 375.571925 seconds.
-  path: Assets/Models/Hamster/Scene.anim
-  artifactKey: Guid(792a436db85166247986f5026cd1cf67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Hamster/Scene.anim using Guid(792a436db85166247986f5026cd1cf67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c85396c7697a6f624940de61152d12e3') in 0.020914 seconds 
-  Import took 0.024295 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 43.142367 seconds.
-  path: Assets/Models/Hamster/Loop_walking.anim
-  artifactKey: Guid(792a436db85166247986f5026cd1cf67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Hamster/Loop_walking.anim using Guid(792a436db85166247986f5026cd1cf67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50441e398c44c95e4a7b3a832a2921e9') in 0.005479 seconds 
-  Import took 0.009349 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.010101 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.56 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.058 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1059ms)
-		BeginReloadAssembly (123ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (34ms)
-		EndReloadAssembly (864ms)
-			LoadAssemblies (106ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (312ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (37ms)
-			SetupLoadedEditorAssemblies (307ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (90ms)
-				ProcessInitializeOnLoadAttributes (182ms)
-				ProcessInitializeOnLoadMethodAttributes (16ms)
-				AfterProcessingInitializeOnLoad (11ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 101.8 MB.
-System memory in use after: 101.9 MB.
-
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 2484.
-Total: 3.184200 ms (FindLiveObjects: 0.220300 ms CreateObjectMapping: 0.067200 ms MarkObjects: 2.877700 ms  DeleteObjects: 0.017900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 132.540788 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ee8997ed30811f39cc261444282e7f1') in 0.134202 seconds 
-  Import took 0.138118 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.027358 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ae8e970278de2f8209e9eb0323c5052') in 0.036832 seconds 
-  Import took 0.040998 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.599928 seconds.
-  path: Assets/Prefab/Hamster.prefab
-  artifactKey: Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Hamster.prefab using Guid(d63b2e8a6f8b65d40a037dc7435b5ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4983f75ec8dd534bb71ce18ce6ac1eb6') in 0.035461 seconds 
-  Import took 0.039258 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009628 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.54 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.066 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1066ms)
-		BeginReloadAssembly (128ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (38ms)
-		EndReloadAssembly (867ms)
-			LoadAssemblies (108ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (317ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (41ms)
-			SetupLoadedEditorAssemblies (307ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (91ms)
-				ProcessInitializeOnLoadAttributes (180ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (11ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.61 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 101.9 MB.
-System memory in use after: 102.0 MB.
-
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 2487.
-Total: 4.671500 ms (FindLiveObjects: 0.284000 ms CreateObjectMapping: 0.114400 ms MarkObjects: 4.223700 ms  DeleteObjects: 0.048000 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 2467.
+Total: 3.663300 ms (FindLiveObjects: 0.178200 ms CreateObjectMapping: 0.066300 ms MarkObjects: 3.395800 ms  DeleteObjects: 0.021500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
