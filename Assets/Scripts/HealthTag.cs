@@ -13,6 +13,6 @@ public class HealthTag : MonoBehaviour
     }
     void Update()
     {
-        HealthTagDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = playerState.health.ToString();
+        HealthTagDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = playerState.health.ToString() + "%";
     }
 }
