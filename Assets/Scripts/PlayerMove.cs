@@ -45,11 +45,13 @@ public class PlayerMove : NetworkBehaviour
     void Update()
     {
         // print("here");
-        if(isLocalPlayer && playerState.isAlive) {
-            SetVelocity();
-            Move();
+        if(isLocalPlayer) {
+            if(playerState.isAlive){
+                SetVelocity();
+                Move();
+                AnimateWalk();
+            }
             Rotate();
-            AnimateWalk();
         }
     }
 
@@ -257,7 +259,7 @@ public class PlayerMove : NetworkBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit) {
         Vector3 horizontalNormalForce = hit.normal;
-        horizontalNormalForce.y = 0;
+        horizontalNormalForce.y = 0; // only consider horizontal normal force
         Vector3 deltaWorldVelocity = horizontalNormalForce * Vector3.Dot(world_velocity, horizontalNormalForce);
         // deltaWorldVelocity.y = 0; // only consider horizontal normal force
 

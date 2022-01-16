@@ -16,7 +16,7 @@ public class PlayerAttackInput : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isLocalPlayer){
+        if(isLocalPlayer && GetComponent<PlayerState>().isAlive){
             if(Input.GetMouseButtonDown(0)){
                 player_animations.Attack_1();
             }
