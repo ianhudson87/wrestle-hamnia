@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 1198945144590033784}
   - component: {fileID: 1685171097693280635}
   - component: {fileID: 5102818819257853334}
+  - component: {fileID: 1035424753}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -255,6 +256,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1035424753
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5385227682022840886}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -462981019419857548, guid: f45ead15ff2e0544692b5b266f3b6ec7, type: 3}
 --- !u!1 &6344972895895566877
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +281,10 @@ GameObject:
   - component: {fileID: 6000500698153115815}
   - component: {fileID: 7883818473111665454}
   - component: {fileID: 4525914112569291983}
+  - component: {fileID: 4752643820495284394}
+  - component: {fileID: 4752643820495284396}
+  - component: {fileID: 4752643820495284397}
+  - component: {fileID: 4752643820495284398}
   m_Layer: 0
   m_Name: HamsterWheel
   m_TagString: Untagged
@@ -323,6 +342,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413425ed653d1164fb1b2db9c64128ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &4752643820495284394
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6344972895895566877}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.96, y: -0.65, z: 3.95}
+  m_Center: {x: -0.04, y: -0.38, z: 0.51}
+--- !u!114 &4752643820495284396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6344972895895566877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85022ff785fc0a345b39b8495a9b00bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+--- !u!114 &4752643820495284397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6344972895895566877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 5d4e370293afb8b4592b20df5a67a81c
+  hasSpawned: 0
+--- !u!114 &4752643820495284398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6344972895895566877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  clientAuthority: 0
+  animator: {fileID: 0}
 --- !u!1 &7382980284734507340
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +413,7 @@ GameObject:
   - component: {fileID: 645707310619696509}
   - component: {fileID: 2212634633196109577}
   - component: {fileID: 3980950417901793683}
+  - component: {fileID: 1845743517}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -404,6 +484,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1845743517
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7382980284734507340}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: f45ead15ff2e0544692b5b266f3b6ec7, type: 3}
 --- !u!1 &8521448450400477274
 GameObject:
   m_ObjectHideFlags: 0
