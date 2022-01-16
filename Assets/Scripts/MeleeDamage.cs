@@ -19,27 +19,29 @@ public class MeleeDamage : NetworkBehaviour
         // print("here");
         Collider[] hitColliders = Physics.OverlapSphere(meleeDetectorTransform.position, radius, layer_mask);
         print(hitColliders.Length);
+        float boopMultiplier = 5;
+
         if(hitColliders.Length>0 && isServer){
             // print("isserver");
             if(GameManager.instance.gamestate == GameState.fight){
+                GameObject hitPlayerObject = hitColliders[0].gameObject;
                 switch(attackType){
                     case AttackType.light:
-                        hitColliders[0].gameObject.GetComponent<PlayerState>().ApplyDamage(8);
+                        hitPlayerObject.GetComponent<PlayerState>().ApplyDamage(8);
+                        boopMultiplier = (hitPlayerObject.GetComponent<PlayerState>().maxHealth - hitPlayerObject.GetComponent<PlayerState>().health)/5;
                         break;
                     case AttackType.heavy:
-                        GameObject hitPlayerObject = hitColliders[0].gameObject;
                         hitPlayerObject.GetComponent<PlayerState>().ApplyDamage(3);
-                        print("playername" + hitPlayerObject.GetComponent<PlayerState>().username);
-                        Vector3 attackerDirection = this.gameObject.transform.TransformDirection(Vector3.forward);
-                        Vector3 boopVector = attackerDirection;
-                        boopVector.y += 0.5f;
-
-                        float boopMultiplier = (hitPlayerObject.GetComponent<PlayerState>().maxHealth - hitPlayerObject.GetComponent<PlayerState>().health)/2;
-                        BoopClientRpc(boopVector * boopMultiplier, hitPlayerObject);
-                        // playerObject.
-                        // playerObject.GetComponent<PlayerMove>().ApplyBoopFromServer(new Vector3(0, 10, 0));
+                        boopMultiplier = (hitPlayerObject.GetComponent<PlayerState>().maxHealth - hitPlayerObject.GetComponent<PlayerState>().health)/2;
                         break;
                 }
+                print("playername" + hitPlayerObject.GetComponent<PlayerState>().username);
+                Vector3 attackerDirection = this.gameObject.transform.TransformDirection(Vector3.forward);
+                Vector3 boopVector = attackerDirection;
+                boopVector.y += 0.5f;
+                BoopClientRpc(boopVector * boopMultiplier, hitPlayerObject);
+                // playerObject.
+                // playerObject.GetComponent<PlayerMove>().ApplyBoopFromServer(new Vector3(0, 10, 0));
             }
         }
     }

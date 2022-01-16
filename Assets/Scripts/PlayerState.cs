@@ -30,7 +30,6 @@ public class PlayerState : NetworkBehaviour
     public void RestoreHealthToFull(){
         health = maxHealth;
         isAlive = true;
-
     }
 
     public int GetHealth(){
