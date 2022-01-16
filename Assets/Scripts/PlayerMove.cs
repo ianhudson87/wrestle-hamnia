@@ -247,4 +247,8 @@ public class PlayerMove : NetworkBehaviour
         world_velocity += world_boop;
     }
 
+    public void SetPosition(Vector3 position){
+        char_controller.Move(position - transform.position);
+    }
+
 }
